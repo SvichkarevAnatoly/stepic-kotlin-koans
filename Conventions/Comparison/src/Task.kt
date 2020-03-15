@@ -1,12 +1,8 @@
 data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparable<MyDate> {
-    override fun compareTo(other: MyDate): Int {
-        if (year.compareTo(other.year) != 0) {
-            return year.compareTo(other.year)
-        }
-        if (month.compareTo(other.month) != 0) {
-            return month.compareTo(other.month)
-        }
-        return dayOfMonth.compareTo(other.dayOfMonth)
+    override fun compareTo(other: MyDate): Int = when {
+        year != other.year -> year.compareTo(other.year)
+        month != other.month -> month.compareTo(other.month)
+        else -> dayOfMonth.compareTo(other.dayOfMonth)
     }
 }
 
