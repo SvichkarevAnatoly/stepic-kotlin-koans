@@ -1,7 +1,7 @@
 import java.util.*
 
-fun buildMap(build: HashMap<Int, String>.() -> Unit): HashMap<Int, String> {
-    val hashMap = HashMap<Int, String>()
+fun <K, V> buildMap(build: HashMap<K, V>.() -> Unit): HashMap<K, V> {
+    val hashMap = HashMap<K, V>()
     hashMap.build()
     return hashMap
 }
